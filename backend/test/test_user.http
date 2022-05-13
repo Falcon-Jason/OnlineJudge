@@ -1,0 +1,56 @@
+### register
+POST localhost:8080/user/register HTTP/1.0
+Content-Type: application/json
+
+{
+  "username": "jason_cheung",
+  "password": "123456"
+}
+
+### login admin
+POST localhost:8080/api/user/login HTTP/1.0
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### login jason
+POST localhost:8080/user/login HTTP/1.0
+Content-Type: application/json
+
+{
+  "username": "jason_cheung",
+  "password": "123456"
+}
+
+### reset password
+POST localhost:8080/user/modify HTTP/1.0
+Content-Type: application/json
+
+{
+  "password": "123456"
+}
+
+### invalid login
+POST localhost:8080/user/login HTTP/1.0
+Content-Type: application/json
+
+{}
+
+### list problem
+POST localhost:8080/problem/list HTTP/1.0
+Content-Type: application/json
+
+{
+  "index": 1
+}
+
+### search problem
+POST localhost:8080/api/problem/search HTTP/1.0
+Content-Type: application/json
+
+{
+  "title": ""
+}

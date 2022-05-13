@@ -1,0 +1,57 @@
+### add_problem
+POST localhost:8080/api/problem/add HTTP/1.0
+token: 627e44197b8dda81aa9406b4
+Content-Type: application/json
+
+{
+  "problem_no": "1005",
+  "title": "A+B Problem",
+  "description": "请编写程序，计算A+B的值",
+  "input_desc": "输入两个整数A B，以空格隔开",
+  "output_desc": "输出一行，包含一个整数，为A+B的值",
+  "sample_cases": [
+    {
+      "input": "2 3\n",
+      "output": "5\n"
+    },{
+      "input": "1 1\n",
+      "output": "2\n"
+    }],
+  "test_cases": [
+    {
+      "input": "2 3\n",
+      "output": "5\n"
+    },{
+      "input": "1 1\n",
+      "output": "2\n"
+    }]
+}
+
+### submit
+POST localhost:8080/api/submission/submit HTTP/1.0
+token: 627ec1996e84511feb86ada5
+Content-Type: application/json
+
+{
+  "problem_id": "627e46dca020918495ec8d64",
+  "code_language": "cpp",
+  "code_text": "#include <stdio.h>\nint main(){int a,b;scanf(\"%d %d\",&a, &b);printf(\"%d\\n\",a+b);}"
+}
+
+### list
+POST localhost:8080/api/problem/list HTTP/1.0
+token: 627e1bfb7640ff633854ae64
+Content-Type: application/json
+
+{
+  "index": 1
+}
+
+### query
+POST localhost:8080/api/problem/query HTTP/1.0
+token: 627ed916d62c27b9df0a7ec9
+Content-Type: application/json
+
+{
+  "problem_id": "627ed40345c7772bd82b18fc"
+}

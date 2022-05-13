@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package submission;
+
+option go_package="/pb/submission";
+
+message TestCase {
+    string input = 1;
+    string output = 2;
+}
+
+message Submission {
+    string id = 1;
+    string code_language = 2;
+    string code_text = 3;
+    repeated TestCase test_cases = 4;
+}
+
+message JudgeReply {
+    bool ok = 1;
+}
+
+service Judge {
+    rpc Judge(Submission) returns(JudgeReply) {}
+}

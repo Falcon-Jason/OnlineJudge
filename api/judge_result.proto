@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package judge_result;
+
+option go_package="/pb/judge_result";
+
+enum JudgeStatus {
+    pending = 0;
+    compiling = 1;
+    running = 2;
+    accept = 3;
+    wrong_answer = 4;
+    compile_error = 5;
+    runtime_error = 6;
+    time_limited_error = 7;
+    memory_limited_error = 8;
+    internal_error = 9;
+}
+
+message ResultWriteBackRequest {
+    string id = 1;
+    JudgeStatus status = 2;
+}
+
+message ResultWriteBackReply {
+    bool ok = 1;
+}
+
+service ResultWriteBack {
+    rpc WriteBack(ResultWriteBackRequest) returns(ResultWriteBackReply) {}
+}
